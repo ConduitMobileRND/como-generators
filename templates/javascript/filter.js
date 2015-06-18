@@ -1,16 +1,21 @@
-'use strict';
+(function (angular) {
+  'use strict';
 
-/**
- * @ngdoc filter
- * @name <%= scriptAppName %>.filter:<%= cameledName %>
- * @function
- * @description
- * # <%= cameledName %>
- * Filter in the <%= scriptAppName %>.
- */
-angular.module('<%= scriptAppName %>')
-  .filter('<%= cameledName %>', function () {
-    return function (input) {
+  angular
+    .module('<%= scriptAppName %>')
+    .filter('<%= cameledName %>', myFilter);
+
+  /**
+   * @ngdoc filter
+   * @name <%= scriptAppName %>.filter:<%= cameledName %>
+   * @function
+   * @description
+   * # <%= cameledName %>
+   * Filter in the <%= scriptAppName %>.
+   */
+  function myFilter () {
+    return function(input) {
       return '<%= cameledName %> filter: ' + input;
     };
-  });
+  }
+})(window.angular);

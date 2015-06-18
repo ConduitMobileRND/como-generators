@@ -1,23 +1,28 @@
-'use strict';
+(function (angular) {
+  'use strict';
 
-/**
- * @ngdoc service
- * @name <%= scriptAppName %>.<%= cameledName %>
- * @description
- * # <%= cameledName %>
- * Factory in the <%= scriptAppName %>.
- */
-angular.module('<%= scriptAppName %>')
-  .factory('<%= cameledName %>', function () {
-    // Service logic
-    // ...
+  angular
+    .module('<%= scriptAppName %>')
+    .factory('<%= cameledName %>', myFactory);
 
-    var meaningOfLife = 42;
+  myFactory.$inject = ['$http'];
 
-    // Public API here
-    return {
-      someMethod: function () {
-        return meaningOfLife;
-      }
+  /**
+   * @ngdoc service
+   * @name <%= scriptAppName %>.<%= cameledName %>
+   * @description
+   * # <%= cameledName %>
+   * Factory in the <%= scriptAppName %>.
+   */
+  function myFactory ($http) {
+    var service = {
+      getData: getData
     };
-  });
+    return service;
+
+    function getData() {
+
+    }
+  }
+
+})(window.angular);

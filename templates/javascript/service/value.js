@@ -1,11 +1,19 @@
-'use strict';
+(function (angular) {
+  'use strict';
 
-/**
- * @ngdoc service
- * @name <%= scriptAppName %>.<%= cameledName %>
- * @description
- * # <%= cameledName %>
- * Value in the <%= scriptAppName %>.
- */
-angular.module('<%= scriptAppName %>')
-  .value('<%= cameledName %>', 42);
+  /**
+   * @ngdoc service
+   * @name <%= scriptAppName %>.<%= cameledName %>
+   * @description
+   * # <%= cameledName %>
+   * Value in the <%= scriptAppName %>.
+   */
+  var value = {
+    foo:  'bar'
+  };
+
+  angular
+    .module('<%= scriptAppName %>')
+    .value('<%= cameledName %>', value);
+
+})(window.angular);

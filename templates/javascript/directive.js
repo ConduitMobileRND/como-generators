@@ -1,18 +1,29 @@
-'use strict';
+(function(angular) {
+  'use strict';
 
-/**
- * @ngdoc directive
- * @name <%= scriptAppName %>.directive:<%= cameledName %>
- * @description
- * # <%= cameledName %>
- */
-angular.module('<%= scriptAppName %>')
-  .directive('<%= cameledName %>', function () {
-    return {
+  angular
+    .module('<%= scriptAppName %>')
+    .directive('<%= cameledName %>', myDirective);
+
+  myDirective.$inject = ['$window'];
+
+  /**
+   * @ngdoc directive
+   * @name <%= scriptAppName %>.directive:<%= cameledName %>
+   * @description
+   * # <%= cameledName %>
+   */
+  function myDirective ($window) {
+    var directive = {
       template: '<div></div>',
-      restrict: 'E',
-      link: function postLink(scope, element, attrs) {
-        element.text('this is the <%= cameledName %> directive');
-      }
+      link: link,
+      restrict: 'EA'
     };
-  });
+    return directive;
+
+    function link(scope, element, attrs) {
+      element.text('this is the <%= cameledName %> directive');
+    }
+  }
+
+})(window.angular);
