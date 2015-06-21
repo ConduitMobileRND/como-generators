@@ -12,7 +12,7 @@
     "app",
     "angular"
   ],
-  "author": "The Como Team",
+  "author": "Como DEV Team",
   "main": "app/index.js",
   "files": [
     "common",
@@ -41,9 +41,6 @@
     "wiredep": "^2.2.0",
     "yeoman-generator": "^0.16.0",
     "yosay": "^1.0.2"
-  },
-  "peerDependencies": {
-    "generator-karma": ">=0.9.0"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
